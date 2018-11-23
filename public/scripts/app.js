@@ -16,29 +16,39 @@ console.log("App.js is running! ");
 //     </div>
 // );
 
-var userName = 'Ankit Kumar';
-var userAge = 21;
-var userLocation = 'Jodhpur';
-var templateTwo = React.createElement(
+var user = {
+    name: 'Ankit',
+    age: 21,
+    location: 'Jodhpur'
+};
+
+function getLocation(location) {
+    if (location) {
+        return React.createElement(
+            'p',
+            null,
+            'Location: ',
+            location
+        );
+    } else {
+        return undefined;
+    }
+}
+var template = React.createElement(
     'div',
     null,
     React.createElement(
         'h1',
         null,
-        userName.toUpperCase() + '!'
+        user.name ? user.name : 'Anonymous'
     ),
-    React.createElement(
+    user.age && user.age >= 18 && React.createElement(
         'p',
         null,
         'Age: ',
-        userAge
+        user.age
     ),
-    React.createElement(
-        'p',
-        null,
-        'Location: ',
-        userLocation
-    )
+    getLocation(user.location)
 );
 var appRoot = document.getElementById('app');
-ReactDOM.render(templateTwo, appRoot);
+ReactDOM.render(template, appRoot);

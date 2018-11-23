@@ -14,15 +14,28 @@ console.log("App.js is running! ");
 //     </div>
 // );
     
-var userName = 'Ankit Kumar';
-var userAge = 21;
-var userLocation = 'Jodhpur';
-var templateTwo = (
+var user = {
+    name: 'Ankit',
+    age: 21,
+    location: 'Jodhpur'
+};
+
+
+
+function getLocation(location){
+    if(location){
+        return <p>Location: {location}</p>;
+    }
+    else{
+        return undefined;
+    }
+}
+var template = (
     <div>
-        <h1>{userName.toUpperCase() + '!'}</h1>
-        <p>Age: {userAge}</p>
-        <p>Location: {userLocation}</p>
+        <h1>{user.name ? user.name : 'Anonymous'}</h1>
+        {( (user.age && user.age >=18) && <p>Age: {user.age}</p> )}
+        {getLocation(user.location)}
     </div>
 );
 var appRoot = document.getElementById('app');
-ReactDOM.render(templateTwo, appRoot);
+ReactDOM.render(template, appRoot);
