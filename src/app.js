@@ -14,11 +14,14 @@ console.log("App.js is running! ");
 //     </div>
 // );
     
+var userName = 'Ankit Kumar';
+var userAge = 21;
+var userLocation = 'Jodhpur';
 var templateTwo = (
     <div>
-        <h1>Ankit</h1>
-        <p>Age: 21</p>
-        <p>Address: Jodhpur</p>
+        <h1>{userName.toUpperCase() + '!'}</h1>
+        <p>Age: {userAge}</p>
+        <p>Location: {userLocation}</p>
     </div>
 );
 var appRoot = document.getElementById('app');

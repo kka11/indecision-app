@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 console.log("App.js is running! ");
 
@@ -16,23 +16,28 @@ console.log("App.js is running! ");
 //     </div>
 // );
 
+var userName = 'Ankit Kumar';
+var userAge = 21;
+var userLocation = 'Jodhpur';
 var templateTwo = React.createElement(
-    "div",
+    'div',
     null,
     React.createElement(
-        "h1",
+        'h1',
         null,
-        "Ankit"
+        userName.toUpperCase() + '!'
     ),
     React.createElement(
-        "p",
+        'p',
         null,
-        "Age: 21"
+        'Age: ',
+        userAge
     ),
     React.createElement(
-        "p",
+        'p',
         null,
-        "Address: Jodhpur"
+        'Location: ',
+        userLocation
     )
 );
 var appRoot = document.getElementById('app');
